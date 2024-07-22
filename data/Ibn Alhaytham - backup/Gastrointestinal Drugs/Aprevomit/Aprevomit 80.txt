@@ -1,0 +1,8 @@
+Aprevomit 80
+Therapeutic category: Gastrointestinal Drugs
+Active constituents: Aprepitant 80
+Description:
+Dosage form: Capsules
+Dosage strength: 80 mg
+How is supplied: 1 – 2 Capsules per Package
+Status: Under Development
