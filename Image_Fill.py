@@ -46,29 +46,29 @@ def get_type(path: str):
         raise TypeError(f"looks like there is alot going on in this file... {path}")
 
 
-def add_description_simple(name, desc):
+def add_img_simple(name, img):
     if not (name in DATA.keys()):
         DATA[name] = [None, None]
-    DATA[name][0] = desc
+    DATA[name][1] = img
 
 
-def add_description_variation(name, desc):
+def add_img_variation(name, img):
     splits = split(find_path(name))
     parent = splits[len(splits) - 2]
     if not (parent in DATA.keys()):
         DATA[parent] = {}
     if not (name in DATA[parent].keys()):
         DATA[parent][name] = [None, None]
-    DATA[parent][name][0] = desc
+    DATA[parent][name][1] = img
 
 
-def add_description(name, desc):
+def add_img(name, img):
     path = find_path(name)
     product_type = get_type(path)
     if product_type == "simple":
-        add_description_simple(name, desc)
+        add_img_simple(name, img)
     elif product_type == "variable":
-        add_description_variation(name, desc)
+        add_img_variation(name, img)
 
 
 def full_input(input_line):
@@ -105,14 +105,11 @@ while True:
 
     print("file path is.. " + find_path(name) + "\n")
 
-    description = full_input("\nenter the desctiption you want")
-
-    # currecting frequent spelling mistakes
-    description = description.replace("Theraputic", "Therapeutic")
+    img = full_input("\nenter the desctiption you want")
 
     # with open(file_path, "w") as file_object:
     #     file_object.write(description)
-    add_description(name, description)
+    add_img(name, img)
 
     with open(output_json_path, "w") as outfile:
-        json.dump(DATA, outfile, indent=5)
+        json.dump(DATA, outfile, indent=3)
