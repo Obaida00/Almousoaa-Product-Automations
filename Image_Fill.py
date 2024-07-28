@@ -1,4 +1,4 @@
-# making a json to contain the discription for each drug
+# adding  the img URL for each drug to the json
 import json
 import os
 
@@ -98,6 +98,7 @@ while True:
         if len(search_res) == 1:
             print("found this.. " + search_res[0])
             exists = find(search_res[0])
+            name = search_res[0]
         else:
             print(search_res)
             name = input()
@@ -105,7 +106,7 @@ while True:
 
     print("file path is.. " + find_path(name) + "\n")
 
-    img = full_input("\nenter the desctiption you want")
+    img = full_input("\nenter the Img URL you want")
 
     # with open(file_path, "w") as file_object:
     #     file_object.write(description)

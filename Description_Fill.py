@@ -98,6 +98,7 @@ while True:
         if len(search_res) == 1:
             print("found this.. " + search_res[0])
             exists = find(search_res[0])
+            name = search_res[0]
         else:
             print(search_res)
             name = input()
@@ -116,3 +117,4 @@ while True:
 
     with open(output_json_path, "w") as outfile:
         json.dump(DATA, outfile, indent=5)
+    
