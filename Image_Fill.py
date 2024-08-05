@@ -22,6 +22,7 @@ def find_path(name: str):
         if name2 in files:
             return os.path.relpath(os.path.join(root, name2))
 
+
 def search(name):
     search_res = []
     for root, dirs, files in os.walk(DIR_PATH):
