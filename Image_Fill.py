@@ -1,4 +1,4 @@
-# adding  the img URL for each drug to the json
+# adding the img URL for each drug to the json
 import json
 import os
 
